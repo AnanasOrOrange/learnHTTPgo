@@ -1,0 +1,52 @@
+*{margin: 0;padding: 0}
+
+            a{color: blueviolet}
+            b {color: black}
+            th {color: cornflowerblue}  
+            td {color: cadetblue}
+            summary{color:blue;font-size: 30px;font-style: oblique ;font-weight: bold}
+            details {color: blue;font-size: 25px;font-style: oblique ;font-weight: bold}
+            input{color: rebeccapurple}
+            label{color: aquamarine}
+            button {color: darkgreen}
+            placeholder{color: darkblue}
+
+            .ananas{color: darkgreen}
+  
+             #ttt{color: aqua}
+       
+            ol b{color: black}
+
+            .noname:hover {color: blueviolet;text-decoration: line-through;cursor: no-drop;}
+
+            .ananas:hover{color: blueviolet;text-decoration: line-through;cursor: pointer}
+
+            .trtr:active{text-decoration: line-through;color:blueviolet;cursor: progress}
+
+            .link:visited{color: crimson}
+
+             input:focus{color: chartreuse}
+
+             .tyty::after{content: "123";text-decoration: line-through}
+
+             .tyty:hover{color: blueviolet;cursor: e-resize}
+
+             body{ color: darkgrey; background-image: url('https://www.free-wallpapers.su/data/media/3/big/anm9496.jpg');
+                 background-repeat: no-repeat;background-position: center top;height: 100vh;width: auto;background-size: cover;background-attachment: fixed}
+
+
+             em{color: blueviolet}
+
+             .tutu{text-align: center;font-size: 45px;font-style: italic;font-weight: bold;font-family: fantasy;text-transform: lowercase;word-spacing: normal;letter-spacing: normal;line-height: normal;cursor: copy;text-decoration: none}
+
+            .tgtg{text-align: center;color: darkgrey; font-size: 45px;font-style: oblique ;font-weight: bold;font-family: sans-serif ;text-transform:inherit;border: 11px solid #ec9171;border-style: double;border-radius: 20px 25px;opacity: 0.99;margin: 23px;padding: 2px;display: block}
+
+            .ananas{color: black}
+
+            #rtrt{width: 100%;height: 50px;line-height: 50px;background: #8017e5;text-align: center;margin-bottom: 30px;font-weight: bold;font-family: sans-serif;position: relative}
+
+            .rere{font-size: 25px;font-style: oblique ;font-weight: bold}
+
+.titi{width: 300px}
+
+            
