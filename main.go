@@ -58,15 +58,23 @@ func addSignature(writer http.ResponseWriter, request *http.Request) {
 	err = html.Execute(writer, nil)
 	check(err)
 }
+
+func create(writer http.ResponseWriter, request *http.Request) {
+	signature := request.FormValue("signature")
+	_, err := writer.Write([]byte(signature))
+	check(err)
+}
 func main() {
 	// html + css
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	http.HandleFunc("/helloCyber", handlerCyber)
 
 	// example from book
-	http.HandleFunc("/helloCyber", handlerCyber)
 	http.HandleFunc("/guestBook", mainPage)
 	http.HandleFunc("/guestBook/new", addSignature)
+	http.HandleFunc("/guestbook/create", create)
+
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
 
