@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -59,10 +60,16 @@ func addSignature(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 }
 
-func create(writer http.ResponseWriter, request *http.Request) {
+func createHandler(writer http.ResponseWriter, request *http.Request) {
 	signature := request.FormValue("signature")
-	_, err := writer.Write([]byte(signature))
+	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE
+	file, err := os.OpenFile("signatures.txt", options, os.FileMode(0600))
 	check(err)
+	_, err = fmt.Fprintln(file, signature)
+	check(err)
+	err = file.Close()
+	check(err)
+	http.Redirect(writer, request, "/guestBook", http.StatusFound)
 }
 func main() {
 	// html + css
@@ -73,7 +80,7 @@ func main() {
 	// example from book
 	http.HandleFunc("/guestBook", mainPage)
 	http.HandleFunc("/guestBook/new", addSignature)
-	http.HandleFunc("/guestbook/create", create)
+	http.HandleFunc("/guestbook/create", createHandler)
 
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
